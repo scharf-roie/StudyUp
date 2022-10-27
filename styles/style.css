@@ -1,0 +1,59 @@
+
+body {
+    background-color: #FFEC62FF;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+h1 {
+    color: #110E08FF;
+    font-family: 'Cookie', cursive;
+    font-size: 3.5rem;
+    padding: 0px;
+}
+
+h2 {
+    font-family: 'Roboto Slab', serif;
+}
+
+h3 {
+    font-family: 'Roboto Serif', serif;
+    
+}
+
+p {
+    color: #110E08FF;
+    font-family: 'Roboto Flex', sans-serif;
+    line-height: 1.5;
+}
+
+.title {
+    margin-left: 10px;
+}
+
+.title-bar {
+    background-color: #FFDC43FF;
+    margin: 0px;
+    padding: 1px 25px;
+    border-bottom: 5px solid #FFFFFFFF;
+}
+
+.signup-desc {
+    width: 40%
+}
+
+
+
+/*
+Black: #110E08FF
+White: #FFFFFFFF
+Red: #FF5064FF
+Tan: #EBCD8CFF
+Dark: #FFC40AFF
+Mid: #FFDC43FF
+Light: #FFEC62FF
+
+font-family: 'Roboto', sans-serif;
+*/
