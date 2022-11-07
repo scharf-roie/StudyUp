@@ -1,16 +1,37 @@
 
-body {
-    background-color: #FFEC62FF;
+:root {
+    --white: #fffaeb;
+    --black: #211e12;
+    --accent: #ff5b62;
+    --dark: #ffc224;
+    --mid: #fdd741;
+    --light: #ffef66;
+    --tan: #ebcd8c;
+}
+
+header {
+    background-color: var(--light);
     margin: 0px;
-    padding: 0px;
+    padding: 1px 15px;
+}
+
+footer {
+    background-color: var(--light);
+    margin: 0px;
+    padding: 50px 25px;
+}
+
+body {
+    background-color: var(--white);
+    margin: 0px;
 }
 
 
 
 h1 {
-    color: #110E08FF;
+    color: var(--black);
     font-family: 'Cookie', cursive;
-    font-size: 3.5rem;
+    font-size: 40px;
     padding: 0px;
 }
 
@@ -24,20 +45,13 @@ h3 {
 }
 
 p {
-    color: #110E08FF;
+    color: var(--black);
     font-family: 'Roboto Flex', sans-serif;
     line-height: 1.5;
 }
 
 .title {
     margin-left: 10px;
-}
-
-.title-bar {
-    background-color: #FFDC43FF;
-    margin: 0px;
-    padding: 1px 25px;
-    border-bottom: 5px solid #FFFFFFFF;
 }
 
 .signup-desc {
@@ -47,13 +61,5 @@ p {
 
 
 /*
-Black: #110E08FF
-White: #FFFFFFFF
-Red: #FF5064FF
-Tan: #EBCD8CFF
-Dark: #FFC40AFF
-Mid: #FFDC43FF
-Light: #FFEC62FF
-
 font-family: 'Roboto', sans-serif;
 */

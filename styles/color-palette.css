@@ -1,0 +1,55 @@
+:root {
+    --white: #fffaeb;
+    --black: #211e12;
+    --accent: #ff5b62;
+    --dark: #ffc224;
+    --mid: #fdd741;
+    --light: #ffef66;
+    --tan: #ebcd8c;
+}
+
+body {
+    background-color: var(--white);
+    margin: 0px;
+}
+
+div {
+    height: 180px;
+}
+
+.red {
+    background-color: var(--accent);
+}
+
+.dark {
+    background-color: var(--dark);
+}
+
+.mid {
+    background-color: var(--mid);
+}
+
+.light {
+    background-color: var(--light);
+}
+
+
+
+.tan {
+    background-color: var(--tan);
+}
+
+
+
+/*
+Black: #110E08FF
+White: #FFFFFFFF
+Red: #FF5064FF
+Tan: #EBCD8CFF
+DD: #FCCF03FF
+Dark: #FFC40AFF
+Mid: #FFDC43FF
+Light: #FFEC62FF
+
+font-family: 'Roboto', sans-serif;
+*/
