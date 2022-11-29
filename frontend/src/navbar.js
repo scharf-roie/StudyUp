@@ -42,7 +42,7 @@ const FixedMenuLayout = () => (
       </Container>
     </Menu>
 
-    <Container text style={{ marginTop: '7em' }}>
+    <Container text style={{ marginTop: '3em' }}>
     <Header as='h1'>
     <Image size='extra-large' src='logo512.png' style={{ marginRight: '0.50em', marginTop: '-0.5em' }} />
       StudyUp</Header>
@@ -58,42 +58,40 @@ const FixedMenuLayout = () => (
       <Container textAlign='center'>
         <Grid divided inverted stackable>
           <Grid.Column width={3}>
-            <Header inverted as='h4' content='Group 1' />
+            <Header inverted as='h4' content='Study Resources' />
             <List link inverted>
-              <List.Item as='a'>Link One</List.Item>
-              <List.Item as='a'>Link Two</List.Item>
-              <List.Item as='a'>Link Three</List.Item>
-              <List.Item as='a'>Link Four</List.Item>
+              <List.Item as='a'>Tutoring</List.Item>
+              <List.Item as='a'>Test Prep</List.Item>
+              <List.Item as='a'>Study Groups</List.Item>
             </List>
           </Grid.Column>
           <Grid.Column width={3}>
-            <Header inverted as='h4' content='Group 2' />
+            <Header inverted as='h4' content='Socials' />
             <List link inverted>
-              <List.Item as='a'>Link One</List.Item>
-              <List.Item as='a'>Link Two</List.Item>
-              <List.Item as='a'>Link Three</List.Item>
-              <List.Item as='a'>Link Four</List.Item>
+              <List.Item as='a'>Coffee Study Sessions</List.Item>
+              <List.Item as='a'>Library Groups</List.Item>
+              <List.Item as='a'>Study Spots</List.Item>
+              <List.Item as='a'>Class Groups</List.Item>
             </List>
           </Grid.Column>
           <Grid.Column width={3}>
-            <Header inverted as='h4' content='Group 3' />
+            <Header inverted as='h4' content='Mental Help' />
             <List link inverted>
-              <List.Item as='a'>Link One</List.Item>
-              <List.Item as='a'>Link Two</List.Item>
-              <List.Item as='a'>Link Three</List.Item>
-              <List.Item as='a'>Link Four</List.Item>
+              <List.Item as='a'>GatorWell</List.Item>
+              <List.Item as='a'>Motivational Messages</List.Item>
+              <List.Item as='a'>UF CARES</List.Item>
             </List>
           </Grid.Column>
           <Grid.Column width={7}>
-            <Header inverted as='h4' content='Footer Header' />
+            <Header inverted as='h4' content='StudyUp' />
             <p>
-              Extra space for a call to action inside the footer that could help re-engage users.
+              Here at StudyUp we are rooting for your success academically and menatlly.
             </p>
           </Grid.Column>
         </Grid>
 
         <Divider inverted section />
-        <Image centered size='mini' src='/logo.png' />
+        <Image centered size='mini' src='/logo512.png' />
         <List horizontal inverted divided link size='small'>
           <List.Item as='a' href='#'>
             Site Map
