@@ -1,17 +1,39 @@
 import React from 'react';
-import LoginForm from './Login';
+import LoginForm from './pages/Login';
 import FixedMenuLayout from './navbar';
-import Table from './table';
+
 import MenuExampleSecondary from "./navbar";
+import Register from './pages/Register';
+import Home from './pages/Home';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-const App = () => {
+function App() {
   return (
-    <div>
-     {/* <Table/> */}
-      <LoginForm/>
-      <FixedMenuLayout/>
+    <Router> 
+      <div>
+        <div className="cards">
+          <Routes>
+            <Route
+              path="/home"
+              element={<Home/>}
+            />
+          </Routes>
+          <Routes>
+            <Route
+              path="/register"
+              element={<Register />}
+            />
+          </Routes>
+          <Routes>
+            <Route
+              path="/login"
+              element={<LoginForm />}
+            />
+          </Routes>
+        </div>
+        <FixedMenuLayout/>
       </div>
-  );
-};
-
+    </Router>
+  )
+}
 export default App;
