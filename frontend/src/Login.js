@@ -31,4 +31,12 @@ const LoginForm = () => (
   </Grid>
 )
 
+function onSignIn(googleUser){
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getID());
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail());
+}
+
 export default LoginForm
