@@ -18,7 +18,7 @@ const LoginForm = () => (
             type='password'
           />
 
-          <div class="g-signin2" data-onsuccess="onSignIn"></div>
+          <div class="g-signin2" data-onsuccess="onSignIn" style={{marginBottom: '20px'}}></div>
           <Button color='teal' fluid size='large'>
             Login
           </Button>

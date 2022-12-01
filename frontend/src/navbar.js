@@ -17,17 +17,17 @@ const FixedMenuLayout = () => (
   <div>
     <Menu fixed='top' inverted>
       <Container>
-        <Menu.Item as='a' header href='home'>
+        <Menu.Item as='a' header href='/'>
           <Image size='mini' src='logo512.png' style={{ marginRight: '1.5em' }}/>
           StudyUp
         </Menu.Item>
-        <Menu.Item as='a'href='home'>Home</Menu.Item>
+        <Menu.Item as='a'href='/'>Home</Menu.Item>
+        <Menu.Item as='a'href='dashboard'>Dashboard</Menu.Item>
 
         <Dropdown item simple text='Menu'>
           <Dropdown.Menu>
-            <Dropdown.Item href='profile' >Personal Information</Dropdown.Item>
+            <Dropdown.Item href='profile' >Profile</Dropdown.Item>
             <Dropdown.Item href='settings' >Settings</Dropdown.Item>
-            <Dropdown.Item href='aboutus' >About Us</Dropdown.Item>
             <Dropdown.Divider />
             {/* <Dropdown.Header>Header Item</Dropdown.Header>
             <Dropdown.Item>
