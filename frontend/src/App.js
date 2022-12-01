@@ -4,7 +4,8 @@ import FixedMenuLayout from './navbar';
 import { useEffect } from 'react';
 import MenuExampleSecondary from "./navbar";
 
-const App = () => {
+//const App = () => {
+  function App () {
 
   function handleCallbackResponse(response){
     console.log("Encoded JWT ID token: " + response.credential);
