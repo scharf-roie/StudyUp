@@ -36,6 +36,15 @@
       "src": "molly.png",
       "type": "image/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "download.webp",
+      "type": "image/png",
+      "sizes": "512x512"
+    },{
+      "src": "college.jpg",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": ".",
