@@ -9,7 +9,6 @@ import {
   Header,
   Icon,
   Image,
-  List,
   Menu,
   Segment,
   Sidebar,
@@ -32,7 +31,7 @@ const HomepageHeading = ({ mobile }) => (
   <Container text>
     <Header
       as='h1'
-      content='Imagine-a-Company'
+      content='StudyUp'
       inverted
       style={{
         fontSize: mobile ? '2em' : '4em',
@@ -41,9 +40,11 @@ const HomepageHeading = ({ mobile }) => (
         marginTop: mobile ? '1.5em' : '3em',
       }}
     />
+        <Image size='small' src='logo512.png' style={{position: 'absolute', top: 200, left: 390}}/>
+    
     <Header
       as='h2'
-      content='Do whatever you want when you want to.'
+      content='Find friends on campus or in your classes. This is a tool for success. You dont have to ever feel alone or overwhelmed again!'
       inverted
       style={{
         fontSize: mobile ? '1.5em' : '1.7em',
@@ -218,29 +219,26 @@ const HomepageLayout = () => (
         <Grid.Row>
           <Grid.Column width={8}>
             <Header as='h3' style={{ fontSize: '2em' }}>
-              We Help Companies and Companions
+              We Help Students Achieve Success
             </Header>
             <p style={{ fontSize: '1.33em' }}>
-              We can give your company superpowers to do things that they never thought possible.
-              Let us delight your customers and empower your needs... through pure data analytics.
+              Find students in your classes. Find tutors. Find class resources. Mental Health Help. Find a community or simply friends. Here in StudyUp everything is possible.
             </p>
             <Header as='h3' style={{ fontSize: '2em' }}>
-              We Make Bananas That Can Dance
+              Imagine a Connected College Campus
             </Header>
             <p style={{ fontSize: '1.33em' }}>
-              Yes that's right, you thought it was the stuff of dreams, but even bananas can be
-              bioengineered.
+            Imagine a campus in which studying is enjoyable. Find a community of like minded individuals such as yourselves. Where you find guidance and feel supported. Welcome to StudyUp.
             </p>
           </Grid.Column>
           <Grid.Column floated='right' width={6}>
-            <Image bordered rounded size='large' src='/images/wireframe/white-image.png' />
-          </Grid.Column>
+          <Image size='large' src='download.webp' />          </Grid.Column>
         </Grid.Row>
-        <Grid.Row>
+        {/* <Grid.Row>
           <Grid.Column textAlign='center'>
             <Button size='huge'>Check Them Out</Button>
           </Grid.Column>
-        </Grid.Row>
+        </Grid.Row> */}
       </Grid>
     </Segment>
 
@@ -249,24 +247,24 @@ const HomepageLayout = () => (
         <Grid.Row textAlign='center'>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
             <Header as='h3' style={{ fontSize: '2em' }}>
-              "What a Company"
+              "Excelent Resource"
             </Header>
             <p style={{ fontSize: '1.33em' }}>That is what they all say about us</p>
           </Grid.Column>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-            <Header as='h3' style={{ fontSize: '2em' }}>
-              "I shouldn't have gone with their competitor."
+            <Header as='h3' style={{ fontSize: '2em', marginRight: 20 }}>
+              "StudyUp helped me break through imposter syndrome by helping me find my community on campus and also helped me meet my closest friends."
             </Header>
             <p style={{ fontSize: '1.33em' }}>
-              <Image avatar src='/images/avatar/large/nan.jpg' />
-              <b>Nan</b> Chief Fun Officer Acme Toys
+            <Image size='large' src='college.jpg' style={{ marginLeft: 130 }}/>
+              <b style={{ marginLeft: 80 }}>Emily</b> First Year Student at the University of Florida
             </p>
           </Grid.Column>
         </Grid.Row>
       </Grid>
     </Segment>
 
-    <Segment style={{ padding: '8em 0em' }} vertical>
+    {/* <Segment style={{ padding: '8em 0em' }} vertical>
       <Container text>
         <Header as='h3' style={{ fontSize: '2em' }}>
           Breaking The Grid, Grabs Your Attention
@@ -301,7 +299,7 @@ const HomepageLayout = () => (
           I'm Still Quite Interested
         </Button>
       </Container>
-    </Segment>
+    </Segment> */}
 
     {/* <Segment inverted vertical style={{ padding: '5em 0em' }}>
       <Container>
