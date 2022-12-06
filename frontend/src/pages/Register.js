@@ -33,7 +33,7 @@ const Register = () => (
       <label>I agree to the Terms and Conditions</label>
     </div>
   </div>
-  <button class="ui button" type="submit">Submit</button>
+  <button class="ui button" type="submit" href='dashboard' onClick={()=>{ alert('Account Created! Good luck Studying.'); }}>Submit</button>
 </form>
 )
 
