@@ -1,36 +1,3 @@
-// import React from 'react';
-
-// function Home(){
-//   return(
-//     <div>
-//       <div class="ui secondary pointing menu">
-//   <a class="active item">
-//     Home
-//   </a>
-//   <a class="item">
-//     Messages
-//   </a>
-//   <a class="item">
-//     Friends
-//   </a>
-//   <div class="right menu">
-//     <a class="ui item">
-//       Logout
-//     </a>
-//   </div>
-// </div>
-// <div class="ui segment">
-//   <p></p>
-// </div>
-//     </div>
-//   );
-// }
-    
-// export default Home;
-
-/* eslint-disable max-classes-per-file */
-/* eslint-disable react/no-multi-comp */
-
 import { createMedia } from '@artsy/fresnel'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
