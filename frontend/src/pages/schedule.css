@@ -1,0 +1,62 @@
+
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+table.schedule {
+    border-collapse: collapse;
+}
+
+
+tbody > tr:nth-child(4n+1) {
+    background-color: rgb(192,192,192);
+    border-top: 2px solid rgb(72,72,72);
+}
+
+tbody > tr:nth-child(4n+2) {
+    background-color: rgb(176,176,176);
+}
+
+tbody > tr:nth-child(4n+3) {
+    background-color: rgb(160,160,160);
+}
+
+tbody > tr:nth-child(4n) {
+    background-color: rgb(144,144,144);
+    border-bottom: 2px solid rgb(72,72,72);
+}
+
+tbody > tr:nth-child(4n+1) > td.selected {
+    background-color: rgb(49, 235, 8);
+    border-top: 2px solid rgb(72,72,72);
+}
+
+tbody > tr:nth-child(4n+2) > td.selected {
+    background-color: rgb(44, 212, 14);
+}
+
+tbody > tr:nth-child(4n+3) > td.selected {
+    background-color: rgb(27, 177, 7);
+}
+
+tbody > tr:nth-child(4n) > td.selected {
+    background-color: rgb(24, 153, 13);
+    border-bottom: 2px solid rgb(72,72,72);
+}
+
+
+tr > th {
+    background-color: white;
+    border: 0px;
+}
+
+td {
+    border: 0px solid rgb(72,72,72);
+    border-width: 0px 1px;
+    height: 8px;
+    width: 100px;
+}
+
+table > tbody > tr > td:hover {
+    background-color: rgb(72,72,72);
+}
