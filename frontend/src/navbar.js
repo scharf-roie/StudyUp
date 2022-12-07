@@ -41,14 +41,14 @@ const FixedMenuLayout = () => (
             <Dropdown.Item href='login'>Log Out</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
-        <Menu.Item position='right'>
+        {/* <Menu.Item position='right'>
                   <Button as='a' href='login'>
                     Log in
                   </Button>
                   <Button as='a' style={{ marginLeft: '0.5em', marginRight: '-8.5em'}} href='register'>
                     Sign Up
                   </Button>
-                </Menu.Item>
+                </Menu.Item> */}
       </Container>
     </Menu>
 

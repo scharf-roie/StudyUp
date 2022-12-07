@@ -2,13 +2,19 @@ import React from 'react';
 
 const Settings = () => (
     <>
-    <h1 style={{marginTop: '70px', marginLeft: '20px'}}>Settings</h1>
-    <div class="inline field" style={{marginTop: '20px', marginLeft: '20px'}}>
-        <div class="ui toggle checkbox">
-            <input type="checkbox" tabindex="0" class="hidden" />
-            <label>Receive Notifications</label>
+    <h1 style={{ marginTop: 80, marginLeft: 500, marginRight: 500}}>Settings</h1>
+    <div class="inline field" style={{ marginTop: 20, marginLeft: 500, marginRight: 500}}>
+    <div class="ui form" style={{marginTop: '20px', marginLeft: '2px', marginRight: '120px'}}>
+            <div class="field">
+                <label>Receive Notifications</label>
+                <select class="ui search dropdown">
+                    <option value="" >Select Preference</option>
+                    <option value="AF">Yes</option>
+                    <option value="AX">No</option>
+                </select>
+            </div>
         </div>
-    </div><div class="ui form" style={{marginTop: '20px', marginLeft: '20px', marginRight: '1200px'}}>
+    </div><div class="ui form" style={{ marginTop: 20, marginLeft: 500, marginRight: 620}}>
             <div class="field">
                 <label>Share profile with</label>
                 <select class="ui search dropdown">

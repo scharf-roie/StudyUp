@@ -9,7 +9,6 @@ import Home from './pages/Home';
 import Profile from './pages/Profile';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Settings from './pages/Settings';
-
 function App() {
   return (
     <Router> 
