@@ -16,6 +16,26 @@
       "src": "logo512.png",
       "type": "image/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "elyse.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "jenny.jpg",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "matthew.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "molly.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": ".",
