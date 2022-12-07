@@ -1,42 +1,12 @@
-// Generate hour selector content
+// Helper function to convert int to standard hour string
 function intToHour(hourNum)
 {
     return `${hourNum % 12 + 1} ${hourNum < 12 ? "A.M" : "P.M"}`;
 }
 
-function decToHex(val)
-{
-    
-    if(val === 0)
-    {
-        return '0';
-    }
-
-    let output = "";
-    while(val > 0)
-    {
-        let remainder = val % 16;
-
-        if(remainder < 10)
-        {
-            output = remainder.toString() + output;
-        }
-        else
-        {
-            output = String.fromCharCode(87 + remainder) + output;
-        }
-
-        val = Math.floor(val / 16);
-    }
-    return output;
-}
-
-function colorCode(r, g, b, a=255)
-{
-    return '#' + decToHex(r) + decToHex(g) + decToHex(b) + decToHex(a);
-}
 
 
+// Create 96 x 7 matrix of booleans to represent schedule entries
 let scheduleEntries = Array(96);
 for(let i = 0; i < 96; i++)
 {
@@ -44,12 +14,16 @@ for(let i = 0; i < 96; i++)
     scheduleEntries[i] = boolRow;
 }
 
+
+
+// Get handle for schedule table element
 let table = document.querySelector("table.schedule");
 table.setAttribute("draggable", "false");
 
-
+// Creates a schedule table based on a starting and ending hour
 function generateSchedule(startHour, endHour)
 {
+    // Typecast to numeric value
     startHour = Number(startHour);
     endHour = Number(endHour);
     
@@ -105,6 +79,7 @@ function generateSchedule(startHour, endHour)
 
             for(let k = 0; k < 7; k++)
             {
+                // Give each cell a click EventListener
                 let cell = document.createElement("td");
                 cell.setAttribute("draggable", "false");
                 cell.row = i * 4 + j;
@@ -112,6 +87,7 @@ function generateSchedule(startHour, endHour)
                 cell.addEventListener('dragstart', (e) => { e.preventDefault() });
                 cell.onclick = cellClick;
 
+                // If the corresponding entry of the schedule boolean matrix is true, set the cell as selected
                 if(scheduleEntries[i * 4 + j][k])
                 {
                     cell.setAttribute("class", "selected");
@@ -130,24 +106,23 @@ function generateSchedule(startHour, endHour)
 }
 
 
-
+// Get handles for selector elements
 let startSelector = document.querySelector("select.start-hour-select");
 let endSelector = document.querySelector("select.end-hour-select");
 let startHour = 8;
 let endHour = 16;
 
+// Fill start and end selector elements with hour options based on each others' value
 function populateHours()
 {
+    // Clear old options
     while(startSelector.firstChild)
-    {
         startSelector.removeChild(startSelector.firstChild);
-    }
 
     while(endSelector.firstChild)
-    {
         endSelector.removeChild(endSelector.firstChild);
-    }
 
+    // Fill start selector from 1 AM to ending hour
     for(let i = 0; i < Number(endHour); i++)
     {
         let hour = document.createElement("option");
@@ -156,6 +131,7 @@ function populateHours()
         startSelector.appendChild(hour);
     }
 
+    // Fill end selector from starting hour to 12 AA
     for(let i = Number(startHour) + 1; i < 24; i++)
     {
         let hour = document.createElement("option");
@@ -164,23 +140,25 @@ function populateHours()
         endSelector.appendChild(hour);
     }
     
+    // Set initial values
     startSelector.value = startHour;
     endSelector.value = endHour;
 }
 
 
 
-
-
+// Keeps track of when to fill the matrix
 let startClick = true;
 let startCell;
 
+// Cell filling behavior for schedule table
 function cellClick()
 {
-    console.log(startClick ? "start" : "end");
-
+    // If this is the initial click, set the clicked cell as the starting point, 
+    // otherwise invert all cells from the old starting point to this cell
     if(startClick)
     {
+        // Toggle selection of the current cell
         startCell = this;
         if(!scheduleEntries[startCell.row][startCell.column])
             startCell.setAttribute("class", "selected");
@@ -198,7 +176,7 @@ function cellClick()
         let startRow = Math.min(startCell.row, this.row);
         let endRow = Math.max(startCell.row, this.row);
         
-
+        // Invert schedule matrix value and selection of selected area
         for(let i = startRow; i <= endRow; i++)
         {
             scheduleEntries[i][startCell.column] = !scheduleEntries[i][startCell.column];
@@ -206,9 +184,11 @@ function cellClick()
             // Array of td elements
             let cells = rows[i - startHour * 4].childNodes;
 
+            // Accounts for extra occasional <th> elements
             let selectedCol = i % 4 !== 0 ? startCell.column : startCell.column + 1;
             let cell = cells[selectedCol];
 
+            // Invert selection
             if(scheduleEntries[i][startCell.column])
                 cell.setAttribute("class", "selected");
             else
@@ -217,6 +197,7 @@ function cellClick()
     }
     else
     {
+        // Don't make a selection if both clicks are not on the same column
         console.log("Clicked outside of selected column");
         startCell.removeAttribute("class");
     }
@@ -224,6 +205,8 @@ function cellClick()
 }
 
 
+
+// Populate elements
 generateSchedule(startHour, endHour);
 populateHours();
 
@@ -231,16 +214,48 @@ startSelector.addEventListener('change', () => { startHour = startSelector.value
 endSelector.addEventListener('change', () => { endHour = endSelector.value; populateHours(); generateSchedule(startHour, endHour); });
 
 
+
+// Evaluates schedule matrix similarity on number of hours overlapping
+function getCompatability(mat0, mat1)
+{
+    let score = 0;
+
+    for(let i = 0; i < mat0.length; i++)
+    {
+        for(let j = 0; j < mat0[i].length; j++)
+        {
+            score += mat0[i][j] && mat1[i][j] ? 0.25 : 0;
+        }
+    }
+    return score;
+}
+
+// Comparison matrix for test case (contains true for 9-5 on weekdays)
+let scheduleComp = Array(96);
+for(let i = 0; i < 96; i++)
+{
+    let boolRow = (i > 31 && i < 68) ? [false, true, true, true, true, true, false] : Array(7).fill(false);
+    scheduleComp[i] = boolRow;
+}
+
+
+
+// Gives behavior to edit/finalize schedule button
 function toggleEdit()
 {
+    // Toggle button boolean and text content
     this.editToggle = !this.editToggle;
     this.textContent = this.editToggle ? "Finalize Schedule" : "Edit Schedule";
 
+    // Disable/enable selector elements accordingly
     if(!this.editToggle)
     {
         startSelector.setAttribute("disabled", true);
         endSelector.setAttribute("disabled", true);
         table.style.display = "none";
+
+        // TEST CASE: displays user input compatability with a 9-to-5 schedule
+        console.log(`Compatability with a 9-to-5 schedule: ${getCompatability(scheduleEntries, scheduleComp)}`);
     }
     else
     {
@@ -250,11 +265,10 @@ function toggleEdit()
     }
 }
 
+// Add functionality to button
 let editButton = document.querySelector("button.edit");
 editButton.editToggle = true;
 editButton.textContent = "Finalize Schedule";
-
 editButton.addEventListener("click", toggleEdit);
-
 
 
